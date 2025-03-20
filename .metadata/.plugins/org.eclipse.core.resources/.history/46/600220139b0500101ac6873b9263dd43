@@ -1,0 +1,5 @@
+package com.luve.daos;
+
+public class DatabaseConnection {
+
+}

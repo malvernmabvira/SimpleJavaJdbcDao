@@ -1,0 +1,32 @@
+package com.luve.daos;
+
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class DatabaseConnection {
+	
+	private static String url;
+    private static String userName;
+    private static String password;
+    
+    static {
+        Scanner myObj = new Scanner(System.in);
+
+        System.out.println("Enter database url: ");
+        url = myObj.nextLine();
+
+        System.out.println("Enter database user name: ");
+        userName = myObj.nextLine();
+
+        System.out.println("Enter database password: ");
+        password = myObj.nextLine();
+
+        myObj.close();
+    }
+    
+    public static void getConnection(String url, String userName, String password) throws SQLException {
+        DriverManager.getConnection(url, userName, password);
+    }
+
+}
